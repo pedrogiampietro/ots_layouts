@@ -1,20 +1,4 @@
-# ots_layouts
-OpenTibiaServer Layouts!
+# Thora Layout - OTS Template
 
-Each branch of this repo includes a different layout (more comming soon).
-
-
-# Layouts
-1. [Aldora](https://github.com/pedrogiampietro/ots_layouts/tree/Aldora)
-2. [Kalaboka-Poke](https://github.com/pedrogiampietro/ots_layouts/tree/Kalaboka-Poke)
-3. [Ascar](https://github.com/pedrogiampietro/ots_layouts/tree/Ascar)
-4. [Nakjila](https://github.com/pedrogiampietro/ots_layouts/tree/Nakjila)
-5. [GODLike]()
-6. [Wondrous](https://github.com/pedrogiampietro/ots_layouts/tree/Wondrous)
-7. [Underscore](https://github.com/pedrogiampietro/ots_layouts/tree/Underscore)
-8. [Envy](https://github.com/pedrogiampietro/ots_layouts/tree/Envy)
-9. [Fibula](https://github.com/pedrogiampietro/ots_layouts/tree/Fibula)
-10. [Necronia](https://github.com/pedrogiampietro/ots_layouts/tree/Necronia)
-11. [Evoker]()
-12. [AiretsamKit](https://github.com/pedrogiampietro/ots_layouts/tree/AiretsamKit)
-13. [MaterialKit](https://github.com/pedrogiampietro/ots_layouts/tree/MaterialKit)
+# Preview
+![thora layout preview](https://github.com/pedrogiampietro/ots_layouts/blob/Thora/preview.png)
