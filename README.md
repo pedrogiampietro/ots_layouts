@@ -18,3 +18,6 @@ Each branch of this repo includes a different layout (more comming soon).
 11. [Evoker]()
 12. [AiretsamKit](https://github.com/pedrogiampietro/ots_layouts/tree/AiretsamKit)
 13. [MaterialKit](https://github.com/pedrogiampietro/ots_layouts/tree/MaterialKit)
+14. [WOP](https://github.com/pedrogiampietro/ots_layouts/tree/WOP)
+15. [Thora](https://github.com/pedrogiampietro/ots_layouts/tree/Thora)
+16. [PokeStorm](https://github.com/pedrogiampietro/ots_layouts/tree/PokeStorm)
