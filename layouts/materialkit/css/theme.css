@@ -1,0 +1,562 @@
+/*==================================================
+  Panels
+==================================================== */
+.panel {
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+
+  border: 1px solid transparent;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 2px;
+}
+.panel.panel-transparent {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.panel.panel-border {
+  border-style: solid;
+  border-width: 0;
+}
+.panel.panel-border.top {
+  border-top-width: 5px;
+}
+.panel.panel-border.right {
+  border-right-width: 5px;
+}
+.panel.panel-border.bottom {
+  border-bottom-width: 5px;
+}
+.panel.panel-border.left {
+  border-left-width: 5px;
+}
+.panel.panel-border > .panel-heading {
+  background-color: #fafafa;
+  border-color: #e7e7e7;
+  border-top: 1px solid transparent;
+}
+.panel.panel-border > .panel-heading > .panel-title {
+  color: #666666;
+}
+.panel-menu {
+  background: #fafafa;
+  padding: 8px;
+  border: 1px solid #e7e7e7;
+}
+.panel-body .panel-menu {
+  border-left: 0;
+  border-right: 0;
+}
+.panel-heading + .panel-menu,
+.panel-menu + .panel-body,
+.panel-body + .panel-menu,
+.panel-body + .panel-body {
+  border-top: 0;
+}
+.panel-body {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+  text-align: justify;	
+}
+.panel-body + .panel-footer {
+  border-top: 0;
+}
+.panel-heading {
+  position: relative;
+  height: 40px;
+  line-height: 36px;
+  background: #fafafa;
+  color: #666666;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 8px;
+  border: 1px solid #e7e7e7;
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+.panel-heading + .panel-body {
+  border-top: 0;
+}
+.panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.panel-heading .widget-menu .btn-group {
+  margin-top: -3px;
+}
+.panel-heading .widget-menu .form-control {
+  margin-top: 6px;
+  font-size: 11px;
+  height: 27px;
+  padding: 2px 10px;
+  border-radius: 1px;
+}
+.panel-heading .widget-menu .form-control.input-sm {
+  margin-top: 9px;
+  height: 22px;
+}
+.panel-heading .widget-menu .progress {
+  margin-top: 11px;
+}
+.panel-heading .widget-menu .progress-bar-lg {
+  margin-top: 10px;
+}
+.panel-heading .widget-menu .progress-bar-sm {
+  margin-top: 15px;
+}
+.panel-heading .widget-menu .progress-bar-xs {
+  margin-top: 17px;
+}
+.panel-icon {
+  padding-left: 5px;
+}
+.panel-title {
+  padding-left: 6px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+.panel-title > .fa,
+.panel-title > .glyphicon,
+.panel-title > .glyphicons,
+.panel-title > .imoon {
+  top: 2px;
+  min-width: 22px;
+  color: inherit;
+  font-size: 14px;
+}
+.panel-title > a {
+  color: inherit;
+}
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #fafafa;
+  border: 1px solid #e7e7e7;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+.panel > .list-group {
+  margin-bottom: 0;
+}
+.panel > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.panel > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+.panel > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+.panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.list-group + .panel-footer {
+  border-top-width: 0;
+}
+.panel > .table,
+.panel > .table-responsive > .table,
+.panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+.panel > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child {
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+}
+.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 1px;
+}
+.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 1px;
+}
+.panel > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 1px;
+}
+.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 1px;
+}
+.panel > .panel-body + .table,
+.panel > .panel-body + .table-responsive {
+  border-top: 1px solid #eeeeee;
+}
+.panel > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.panel > .table-bordered,
+.panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+.panel > .table-bordered > thead > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.panel > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.panel > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.panel > .table-bordered > thead > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.panel > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.panel > .table-bordered > tfoot > tr > td:first-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.panel > .table-bordered > thead > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.panel > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.panel > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.panel > .table-bordered > thead > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.panel > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.panel > .table-bordered > tfoot > tr > td:last-child,
+.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.panel > .table-bordered > thead > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.panel > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.panel > .table-bordered > thead > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.panel > .table-bordered > tbody > tr:first-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.panel > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.panel > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.panel > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.panel > .table-bordered > tfoot > tr:last-child > th,
+.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.panel > .table-responsive {
+  border: 0;
+  margin-bottom: 0;
+}
+.panel-group {
+  margin-bottom: 19px;
+}
+.panel-group .accordion-toggle {
+  padding-left: 5px;
+}
+.panel-group.accordion-lg .panel + .panel {
+  margin-top: 12px;
+}
+.panel-group.accordion-lg .panel-heading {
+  font-size: 14px;
+  height: 54px;
+  line-height: 52px;
+}
+.panel-group .accordion-icon {
+  padding-left: 28px;
+}
+.panel-group .accordion-icon:after {
+  position: absolute;
+  content: "\f068";
+  font-family: "FontAwesome";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  color: #555;
+  left: 15px;
+  top: 1px;
+}
+.panel-group .accordion-icon.collapsed:after {
+  content: "\f067";
+}
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 2px;
+}
+.panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+  border-top: 0;
+}
+.panel-group .panel-footer {
+  border-top: 0;
+}
+.panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #eeeeee;
+}
+.panel-primary.panel-border {
+  border-color: #4a89dc;
+}
+.panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: #4a89dc;
+  border-color: #4a89dc;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #4a89dc;
+}
+.panel-primary > .panel-heading .badge {
+  color: #4a89dc;
+  background-color: #ffffff;
+}
+.panel-primary > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #4a89dc;
+}
+.panel-primary > .panel-body.fill {
+  color: #FFF;
+  border-color: #82ade7;
+  background-color: #82ade7;
+}
+.panel-primary > .panel-body.border {
+  border: 3px solid #4a89dc;
+}
+.panel-success.panel-border {
+  border-color: #70ca63;
+}
+.panel-success > .panel-heading {
+  color: #ffffff;
+  background-color: #70ca63;
+  border-color: #70ca63;
+}
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #70ca63;
+}
+.panel-success > .panel-heading .badge {
+  color: #70ca63;
+  background-color: #ffffff;
+}
+.panel-success > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #70ca63;
+}
+.panel-success > .panel-body.fill {
+  color: #FFF;
+  border-color: #9ddb94;
+  background-color: #9ddb94;
+}
+.panel-success > .panel-body.border {
+  border: 3px solid #70ca63;
+}
+.panel-info.panel-border {
+  border-color: #3bafda;
+}
+.panel-info > .panel-heading {
+  color: #ffffff;
+  background-color: #3bafda;
+  border-color: #3bafda;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #3bafda;
+}
+.panel-info > .panel-heading .badge {
+  color: #3bafda;
+  background-color: #ffffff;
+}
+.panel-info > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #3bafda;
+}
+.panel-info > .panel-body.fill {
+  color: #FFF;
+  border-color: #73c6e5;
+  background-color: #73c6e5;
+}
+.panel-info > .panel-body.border {
+  border: 3px solid #3bafda;
+}
+.panel-warning.panel-border {
+  border-color: #f6bb42;
+}
+.panel-warning > .panel-heading {
+  color: #ffffff;
+  background-color: #f6bb42;
+  border-color: #f6bb42;
+}
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #f6bb42;
+}
+.panel-warning > .panel-heading .badge {
+  color: #f6bb42;
+  background-color: #ffffff;
+}
+.panel-warning > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #f6bb42;
+}
+.panel-warning > .panel-body.fill {
+  color: #FFF;
+  border-color: #f9d281;
+  background-color: #f9d281;
+}
+.panel-warning > .panel-body.border {
+  border: 3px solid #f6bb42;
+}
+.panel-danger.panel-border {
+  border-color: #e9573f;
+}
+.panel-danger > .panel-heading {
+  color: #ffffff;
+  background-color: #e9573f;
+  border-color: #e9573f;
+}
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #e9573f;
+}
+.panel-danger > .panel-heading .badge {
+  color: #e9573f;
+  background-color: #ffffff;
+}
+.panel-danger > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #e9573f;
+}
+.panel-danger > .panel-body.fill {
+  color: #FFF;
+  border-color: #f08b7a;
+  background-color: #f08b7a;
+}
+.panel-danger > .panel-body.border {
+  border: 3px solid #e9573f;
+}
+.panel-alert.panel-border {
+  border-color: #967adc;
+}
+.panel-alert > .panel-heading {
+  color: #ffffff;
+  background-color: #967adc;
+  border-color: #967adc;
+}
+.panel-alert > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #967adc;
+}
+.panel-alert > .panel-heading .badge {
+  color: #967adc;
+  background-color: #ffffff;
+}
+.panel-alert > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-alert > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #967adc;
+}
+.panel-alert > .panel-body.fill {
+  color: #FFF;
+  border-color: #bfaeea;
+  background-color: #bfaeea;
+}
+.panel-alert > .panel-body.border {
+  border: 3px solid #967adc;
+}
+.panel-system.panel-border {
+  border-color: #37bc9b;
+}
+.panel-system > .panel-heading {
+  color: #ffffff;
+  background-color: #37bc9b;
+  border-color: #37bc9b;
+}
+.panel-system > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #37bc9b;
+}
+.panel-system > .panel-heading .badge {
+  color: #37bc9b;
+  background-color: #ffffff;
+}
+.panel-system > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-system > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #37bc9b;
+}
+.panel-system > .panel-body.fill {
+  color: #FFF;
+  border-color: #64d2b6;
+  background-color: #64d2b6;
+}
+.panel-system > .panel-body.border {
+  border: 3px solid #37bc9b;
+}
+.panel-dark.panel-border {
+  border-color: #3b3f4f;
+}
+.panel-dark > .panel-heading {
+  color: #ffffff;
+  background-color: #3b3f4f;
+  border-color: #3b3f4f;
+}
+.panel-dark > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #3b3f4f;
+}
+.panel-dark > .panel-heading .badge {
+  color: #3b3f4f;
+  background-color: #ffffff;
+}
+.panel-dark > .panel-heading > .panel-title {
+  color: #ffffff;
+}
+.panel-dark > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #3b3f4f;
+}
+.panel-dark > .panel-body.fill {
+  color: #FFF;
+  border-color: #575d75;
+  background-color: #575d75;
+}
+.panel-dark > .panel-body.border {
+  border: 3px solid #3b3f4f;
+}
