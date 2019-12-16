@@ -1,0 +1,437 @@
+@font-face {
+	font-family: 'BebasNeueRegular';
+	src: url('fonts/BebasNeue-webfont.eot');
+	src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/BebasNeue-webfont.woff') format('woff'),
+		 url('fonts/BebasNeue-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+img {
+	border: 0;
+}
+
+a {
+	color: #0088CC;
+	text-decoration: none;
+}
+
+	a:hover {
+		color:#005580;
+		text-decoration: underline;
+	}
+
+body {
+    margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	background-color: #2e5a7e;
+}
+
+#nav {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	height: 50px;
+	background: url('../images/nav-bg.png') repeat-x;
+}
+	
+	#nav-wrap {
+		margin: 0 auto;
+		width: 960px;
+		text-transform: uppercase;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		font-size: 14px;
+		color: #DDD;
+		line-height: 50px;
+	}
+	
+		#nav-links {
+			float: left;
+			margin: 0 10px;
+			width: 720px;
+			font-family: 'Cinzel', serif;
+			font-weight: 600;
+			font-size: 16px;
+		}
+			#nav-links > li {
+				float: left;
+				position: relative;
+				list-style: none;
+			}
+			
+				#nav-links > li:hover > ul {
+					display: block;
+				}
+				
+				#nav-links > li:hover > a {
+					color: #FFF;
+					text-decoration: none;
+					background: url('../images/nav-button.png') repeat-x;
+				}
+			
+				#nav-links > li > a {
+					display: block;
+					padding: 0 18px;
+					text-align: center;
+					color: #DDD;
+				}
+					
+				#nav-links li ul {
+					position: absolute;
+					list-style: none;
+					margin: 0;
+					padding: 6px 0;
+					display: none;
+					top: 100%;
+					left: 0;
+					white-space: nowrap;
+					background-color: #FFF;
+					border: 1px solid #CCC;
+					border-radius: 0 6px 6px 6px;
+				}
+					
+					#nav-links li ul li {
+						display: block;
+					}
+					
+					#nav-links li ul li:hover > a {
+						background-color: #0077CC;
+						text-decoration: none;
+						color: #FFF;
+					}
+					
+					#nav-links li ul li > a {
+						display: block;
+						padding: 1px 10px 0;
+						text-transform: uppercase;
+						font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+						font-weight: bold;
+						font-size: 14px;
+						line-height: 30px;
+						text-align: left;
+						color: #444;
+					}
+		
+		#nav-info {
+			float: left;
+			margin: 0;
+			padding: 0;
+			width: 210px;
+			text-align: center;
+			/*background: url('../images/pikachu.png') no-repeat;*/
+		}
+
+#wrap {
+    overflow: visible;
+    margin: 50px auto 0;
+    width: 960px;
+	height: 200px;
+    background: url('../images/logo.png') no-repeat;
+}
+	
+	#header {
+		width: 960px;
+		height: 166px;
+	}
+	
+		#logo {
+			float: left;
+			margin: 30px 0 0 30px;
+			width: 370px;
+			height: 120px;
+			display: block;
+			text-indent: -9999px;
+		}
+	
+	#rightmenu {
+		float: right;
+		margin-right: 10px;
+		width: 210px;
+		font-family: 'Cinzel', serif;
+		font-weight: 600;
+	}
+	
+		.rightmenu-box {
+			margin-top: 25px;
+			padding: 13px 16px;
+			color: #444;
+			background-color: #F9F9F9;
+			border: 1px solid #43739a;
+			border-radius: 6px;
+		}
+		
+			.rightmenu-box:first-child {margin-top: 0;}
+			
+			.rightmenu-box h1 {
+				margin: 0 0 5px;
+				text-transform: uppercase;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				font-weight: bold;
+				font-size: 14px;
+				color: #444;
+				text-align: left;
+			}
+			
+			.rightmenu-box label {
+				display: block;
+				font-weight: 500;
+			}
+			
+				.rightmenu-box label:last-child {margin-top: 5px;}
+			
+			.rightmenu-box input {
+				margin: 0;
+			}
+			
+				.rightmenu-box input[name="name"] {width: 172px;}
+				.rightmenu-box input[name="pass"] {width: 102px;}
+				.rightmenu-box input[name="login"] {width: 66px; float: right;}
+	
+			.rightmenu-box img {
+				margin-top: 10px;
+			}
+			
+			.rightmenu-box .fb-like-box {
+				margin-left: -10px;
+			}
+			
+			.rightmenu-box .top {
+				width: 176px;
+				padding: 5px 0;
+				}
+				
+				.rightmenu-box .top .toprank {
+					font-weight: bold;
+					margin-right: 2px;
+				}
+				
+				.rightmenu-box .top .topvalue {
+					float: right;
+					font-weight: bold;
+				}
+			
+			.rightmenu-box ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			
+			.arcanine-bg {
+				float: right;
+				margin-top: -35px;
+				width: 55px;
+				height: 50px;
+				background: url('../images/../images/arcanine.png') no-repeat;
+			}
+			
+			.scyther-bg {
+				float: right;
+				margin-top: -30px;
+				width: 45px;
+				height: 50px;
+				background: url('../images/scyther.png') no-repeat;
+			}
+			
+			.electrode-bg {
+				float: right;
+				margin-top: -33px;
+				width: 48px;
+				height: 50px;
+				background: url('../images/electrode.png') no-repeat;
+			}
+			
+			.dragonair-bg {
+				float: right;
+				margin-top: -34px;
+				width: 48px;
+				height: 50px;
+				background: url('../images/dragonair.png') no-repeat;
+			}
+	
+	#content {
+		overflow: visible;
+		float: left;
+		margin: 0 0 0 10px;
+		padding: 15px 10px;
+		width: 698px;
+		color: #444;
+		background-color: #F9F9F9;
+		border: 1px solid #43739a;
+		border-radius: 6px;
+	}
+	
+		.title {
+			padding: 0 5px;
+			margin: 0 0 10px;
+			font-size: 16px;
+			font-weight: 700;
+			color: #333;
+			text-align: left;
+		}
+		
+		.fastnews {
+			margin-bottom: 5px;
+			width: 698px;
+			color: #444;
+		}
+		
+			.fastnews img {vertical-align: text-bottom;}
+			
+			.fastnews a {
+				display: block;
+				margin: 0 0 3px;
+				padding: 3px 16px;
+				border: 1px dashed #CCC;
+				border-radius: 6px;
+				background-color: #F9F9F9;
+				text-decoration: none;
+			}
+			
+				.fastnews a:last-child {margin: 0;}
+				.fastnews a:hover {background-color: #DDEEFF;}
+	
+		.news {
+			margin-top: 15px;
+			width: 698px;
+			background-color: #F9F9F9;
+		}
+
+			.news-title {
+				padding: 0 45px;
+				margin-bottom: 5px;
+				line-height: 56px;
+				font-size: 19px;
+				font-weight: 500;
+				color: #AAA;
+				text-align: left;
+				background: url('../images/pokeballbar.png') no-repeat;
+			}
+			
+			.news-title a {
+				color: #AAA;
+			}
+			
+				.news-title a:hover {
+					color: #DDD;
+					text-decoration: none;
+				}
+			
+			.news-date {
+				float: right;
+				font-size: 14px;
+			}
+			
+			.news-text {
+				padding: 0 15px;
+			}
+			
+			.news-footer {
+				height: 30px;
+				overflow: visible;
+				margin-top: 15px;
+				padding: 0 15px;
+			}
+			
+				.news-top {
+					line-height: 30px;
+					float: right;
+					display: block;
+				}
+
+	#footer {
+		float: left;
+		margin: 50px 0px;
+		width: 940px;
+		color: #CCC;
+		text-align: center;
+	}
+
+/* style */
+.tablestyletitle {
+	display: block;
+	text-transform: uppercase;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0 0 6px;
+	text-align: center;
+}
+
+.tablestyle {
+	border: 1px solid #CCC;
+	border-spacing: 0;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+	
+	.tablestyle tr:nth-child(odd) {
+		background-color: #FFF;
+	}
+	
+	.tablestyle tr:nth-child(even) {
+		background-color: #EEE;
+	}
+
+	.tablestyle th {
+		background-color: #4274A4;
+		color: #FFF;
+		padding: 3px 5px;
+	}
+
+	.tablestyle td {
+		padding: 5px 3px;
+		border-left: 1px solid #CCC;
+		padding: 3px 5px;
+	}
+	
+	.tablestyle td:first-child {
+		border-left: 0;
+	}
+	
+	.tablestyle img {
+		vertical-align: middle;
+	}
+
+a.buttonstyle {
+	width: 160px;
+	padding: 5px;
+	background-color: #EEAF1B;
+	color: #FFF;
+	border: 1px solid #EEAF1B;
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 5px;
+}
+
+a:hover.buttonstyle {
+	background-color: #F59813;
+	text-decoration: none;
+}
+
+input.buttonstyle {
+	width: 160px;
+	padding: 5px;
+	background-color: #EEAF1B;
+	color: #FFF;
+	border: 1px solid #EEAF1B;
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 5px;
+}
+
+input:hover.buttonstyle {
+	background-color: #F59813;
+	text-decoration: none;
+	cursor: pointer; cursor: hand;
+}

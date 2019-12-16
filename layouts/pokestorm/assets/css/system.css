@@ -1,0 +1,355 @@
+a.green {color: #0C0}
+a.red {color: #F00}
+
+.toolbar { 
+    padding: 10px; 
+    border: 1px solid silver; 
+    font-weight: bold; 
+    margin-bottom: 15px; 
+}
+
+.readArchive { 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+quote { 
+    padding: 4px; 
+    border: 1px solid silver; 
+} 
+
+.moderatingPanel { 
+    border: 1px solid silver; 
+    padding: 5px; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+} 
+
+.houses_list_box {
+	border: 0px dotted silver;
+	margin-bottom: 20px;
+}
+
+.house_title {
+	font-weight: bold;
+	color: #C00;
+	text-decoration:underline;
+	text-decoration-color: #C00;
+	border-bottom: 0px dotted silver;
+	padding: 5px;
+}
+
+.house_content {
+	padding: 5px;
+}
+
+.message .content {
+	padding: 5px 7px 7px 7px;
+}
+
+.message .accinfo:first-child {margin-top: 0;}
+
+.message .accinfo {
+	margin: 20px 10px 5px;
+}
+
+	.message .title {
+		margin: 0 -10px 5px;
+	}
+
+.loginform {
+	background-image: url("loginbg.png");
+	background-repeat:no-repeat;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 52px;
+	width: 154px;
+	margin-left: 241px;
+}
+
+	.loginform form {
+		text-align: center;
+	}
+
+	.loginform label {
+		display: block;
+		text-align: left;
+		font-weight: bold;
+	}
+	
+	.loginform input {
+		margin: 0;
+		width: 150px;
+	}
+
+	.loginform input[type="submit"] {
+		width: 100px;
+		height: 30px;
+		margin: 5px 0 0;
+	}
+
+.changeform {
+	background-image: url("changebg.png");
+	background-repeat:no-repeat;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 65px;
+	width: 154px;
+	margin-left: 220px;
+}
+
+	.changeform form {
+		text-align: center;
+	}
+
+	.changeform label {
+		display: block;
+		text-align: left;
+		font-weight: bold;
+	}
+	
+	.changeform input {
+		margin: 0;
+		width: 150px;
+	}
+
+	.changeform input[type="submit"] {
+		width: 100px;
+		height: 30px;
+		margin: 5px 0 0;
+	}
+
+.charform {
+	background-image: url("charbg.png");
+	background-repeat:no-repeat;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 93px;
+	width: 154px;
+	margin-left: 224px;
+}
+
+	.charform form {
+		text-align: center;
+	}
+
+	.charform label {
+		display: block;
+		text-align: left;
+		font-weight: bold;
+	}
+	
+	.charform input {
+		margin: 0 0 7px;
+		width: 150px;
+	}
+	
+	.charform select {
+		margin: 0 0 7px;
+		width: 154px;
+	}
+
+	.charform input[type="submit"] {
+		width: 100px;
+		height: 30px;
+		margin: 5px 0 0;
+	}
+
+.chartab {
+	background-image: url("chartabbg.png");
+	background-repeat:no-repeat;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 86px;
+	width: 400px;
+	margin-left: 100px;
+}
+
+.recvform {
+	background-image: url("recvbg.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 72px;
+	width: 255px;
+	margin-left: 169px;
+}
+
+	.recvform form {
+		text-align: center;
+	}
+
+	.recvform p {
+		display: block;
+		text-align: left;
+		font-weight: bold;
+		margin: 0;
+		padding: 0;
+	}
+
+	.recvform label {
+		display: block;
+		text-align: left;
+		font-weight: bold;
+	}
+	
+	.recvform input {
+		margin: 0 0 7px;
+		width: 150px;
+	}
+	
+	.recvform input[type="radio"] {
+		margin: 0 5px 5px;
+		width: 15px;
+	}
+
+	.recvform .recvlabel {
+		display: inline;
+		font-weight: normal;
+	}
+
+	.recvform input[type="submit"] {
+		width: 100px;
+		height: 30px;
+		margin: 5px 0 0;
+	}
+
+.accform {
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 10px;
+	width: 450px;
+	margin-left: 124px;
+}
+
+	.accform .accform-title {
+		text-align: center;
+		font-size: 16px;
+		font-weight: 700;
+		color: #333;
+	}
+
+	.accform label {
+		display: block;
+		text-align: left;
+		font-weight: bold;
+	}
+
+	.accform .acclabel {
+		display: inline;
+		line-height: 25px;
+	}
+	
+	.accform input {
+		margin: 0 0 7px;
+		width: 150px;
+	}
+	
+	.accform input[type="radio"] {
+		margin: 0 5px 5px;
+		width: 15px;
+	}
+	
+	.accform select {
+		margin: 0 0 7px;
+		width: 154px;
+	}
+
+	.accform input[type="submit"] {
+		width: 100px;
+		height: 30px;
+		margin: 5px 0 0;
+	}
+
+.downtab {
+	background-image: url("downbg.png");
+	background-repeat: no-repeat;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px 10px 10px 42px;
+}
+
+.message .bar {
+	margin: 10px 0 0;
+	border-top: 1px solid silver;
+	padding: 5px 10px;
+	width: 678px;
+	background-color: #e9edee;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+.message .bar a {
+	color: #F00;
+}
+
+.messageAdd {
+	border-left: 1px solid silver;
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+	padding: 5px;
+	float: right;
+	background-color: #e9edee;
+}
+
+.messageAdd a {
+	color: #F00;
+}
+
+.avatar {
+	padding: 1px;
+	border: 1px groove silver;
+	width: 90px;
+	height: 90px;
+}
+
+.friend {
+	float: left; 
+	width: 100px;
+	text-align: center;
+}
+
+.friend img {
+	padding: 1px;
+	border: 1px groove silver;
+	width: 90px;
+	height: 90px;
+}
+
+.loader {
+margin-left: 10px;
+display: none;
+}
+
+
+.table { background:#333; }
+.table ul { float:left; margin:0; padding:0;  color: #000;}
+.table ul li { list-style:none; padding:5px 10px; height: 20px }
+.table ul li.title { font-weight:bold; background:#333; color:#fff; }
+.table ul li.even { background:#fff }
+.table ul li.odd { background:#DFDFDF }
+.table input {margin: 0}
+
+#face {
+	color:#FFF;
+}
+
+#message1 {
+	width: 600px;
+}
+
+#housediv {
+	text-align:right;
+	margin-right: 300px;
+}
+
+#hdr {
+	background-image: url(header.png);
+	background-repeat:no-repeat;
+	width: 850px;
+	height:30px;
+	padding-left:20px;
+	padding-top: 5px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
