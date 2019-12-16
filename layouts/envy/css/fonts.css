@@ -1,0 +1,33 @@
+@font-face {
+  	font-family: 'Cinzel';
+  	src: url('../fonts/Cinzel-Regular.eot');
+  	src: url('../fonts/Cinzel-Regular.eot?#iefix') format('embedded-opentype'),
+    	 url('../fonts/Cinzel-Regular.ttf')  format('truetype'), 
+       	 url('../fonts/Cinzel-Regular.svg') format('svg');
+  	font-weight: normal;
+}
+@font-face {
+  	font-family: 'Cinzel';
+  	src: url('../fonts/Cinzel-Bold.eot');
+  	src: url('../fonts/Cinzel-Bold.eot?#iefix') format('embedded-opentype'),
+    	 url('../fonts/Cinzel-Bold.ttf')  format('truetype'), 
+       	 url('../fonts/Cinzel-Bold.svg') format('svg');
+  	font-weight: bold;
+	
+}
+@font-face {
+  	font-family: 'Cinzel';
+  	src: url('../fonts/Cinzel-Black.eot');
+  	src: url('../fonts/Cinzel-Black.eot?#iefix') format('embedded-opentype'),
+    	 url('../fonts/Cinzel-Black.ttf')  format('truetype'), 
+       	 url('../fonts/Cinzel-Black.svg') format('svg');
+  	font-weight: 900;
+}
+@font-face {
+  	font-family: 'Avenir';
+  	src: url('../fonts/AvenirLTStd-Light.eot');
+  	src: url('../fonts/AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'),
+    	 url('../fonts/AvenirLTStd-Light.ttf')  format('truetype'), 
+       	 url('../fonts/AvenirLTStd-Light.svg') format('svg');
+  	font-weight: 300;
+}
