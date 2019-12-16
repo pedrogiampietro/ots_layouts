@@ -21,8 +21,7 @@ foreach($list as $i => $supporter)
 $main_content .= "</table>";*/
 
 $main_content .= '
-	<div class="panel panel-default">
-		<div class="panel-heading"><h3 class="panel-title">Support</h3></div>
+	<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Support</h3></div>
 		<div class="panel-body">';
 
 			$adminList = $SQL->query('SELECT ' . $SQL->fieldName('name') . ', ' . $SQL->fieldName('lastlogin') . ', ' . $SQL->fieldName('id') . ', ' . $SQL->fieldName('group_id') . ' FROM ' . $SQL->tableName('players') . ' WHERE ' . $SQL->fieldName('group_id') . ' > 2');

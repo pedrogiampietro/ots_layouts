@@ -1,63 +1,6 @@
 <?php
 if(!defined('INITIALIZED'))
     exit;
-    
-    $playersOnline = $config['status']['serverStatus_players'];
-
-    $main_content .= '
-
-    <div style="width:100%;line-height:30px;margin-bottom: -2px; margin-top: 10px;">
-        <div style="width:100%;margin: 0 auto;position:relative;left:50%;font-family: \'Ubuntu\', sans-serif;font-weight: 700;text-shadow:0 0 10px #555;">
-            <div style="width:200px;text-align:right;font-size:16px;position:absolute;left:-240px;">There are currently</div>
-            <div style="width:200px;text-align:center;font-size:35px;position:absolute;left:-100px;" id="onlinecount-news">' . $playersOnline . '</div>
-            <div style="width:200px;text-align:left;font-size:16px;position:absolute;left:40px;">players online.</div>
-        </div>
-    </div>
-
-    <a href="?view=register" class="btn btn-secondary"><i class="fa fa-user-plus fa-sm"></i> Create an account</a>
-    <a href="#" class="btn btn-secondary pull-right"><i class="fa fa-download fa-sm"></i> Download Client</a>
-    <br/>
-
-    <br/>
-    <!-- coutdown <div id="launchCountdown" class="alert text-center" style="font-size: 18px; font-family: \'verdana\'; border-color: var(--shark-main); background-color: var(--cream-d2); margin: 20px 0 0;"></div> -->
-
-    <br/>
-    <br/>
-
-    <!--<div class="contbox" style="padding-bottom:0;padding-top:0;">
-        <legend style="margin-bottom:0;">Monthly Top Guilds
-            <span class="pull-right">Prize Pool: 6000 Points <a href="/topguilds" style="font-size: 85%; margin-top: 5px;">(More)</a></span></legend>
-        <table width="100%">
-            <tr>
-                <td>
-                    <div class="top-area">
-                        <b>1st<br/>
-            <a href="/guilds/view/4">
-                <img src="../layouts/custom/assets/img/1.png" class="top-icons" alt="Rank #1 Guild"><br/>
-                <div class="top-names">FUCK SOCIETY</div>
-            </a>
-        </b> 18 War Frags
-                    </div>
-                </td>
-                <td>
-                    <div class="top-area">
-                        <b>2nd<br/>
-            <a href="/guilds/view/15">
-                <img src="../layouts/custom/assets/img/2.png" class="top-icons" alt="Rank #2 Guild"><br/>
-                <div class="top-names">High AF</div>
-            </a>
-        </b> 5 War Frags
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </div> -->
-    <h2>News</h2>
-
-    ';
-    
-
-
 
 function replaceSmile($text, $smile)
 {
@@ -133,44 +76,26 @@ function showPost($topic, $text, $smile)
 }
 
 
-
-
 $last_threads = $SQL->query('SELECT ' . $SQL->tableName('players') . '.' . $SQL->fieldName('name') . ', ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('post_text') . ', ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('post_topic') . ', ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('post_smile') . ', ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('id') . ', ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('replies') . ', ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('post_date') . ' FROM ' . $SQL->tableName('players') . ', ' . $SQL->tableName('z_forum') . ' WHERE ' . $SQL->tableName('players') . '.' . $SQL->fieldName('id') . ' = ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('author_guid') . ' AND ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('section') . ' = 1 AND ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('first_post') . ' = ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('id') . ' ORDER BY ' . $SQL->tableName('z_forum') . '.' . $SQL->fieldName('last_post') . ' DESC LIMIT ' . $config['site']['news_limit'])->fetchAll();
 if (isset($last_threads[0])) {
     foreach($last_threads as $thread) {
         $main_content .= '
-        <div class="contbox" style="margin-bottom: 22px;">
-        <a href="/news/node/1576397353" style="font-size:18px;font-family: \'Ubuntu\', sans-serif;text-shadow:1px 1px 2px black;">' . htmlspecialchars($thread['post_topic']) . '</a>
-        <span class="active pull-right" style="font-size:14px;font-family: \'Ubuntu\', sans-serif;text-shadow:1px 1px 2px gray;font-weight: 400;line-height:14px;position:relative;top:6px;"><i><i class="fa fa-clock-o"></i> ' . date("H:i - F j, Y", $thread['post_date']) . '</i></span>
-        <hr style="margin-top: 2px !important;margin-bottom: 4px !important;">
-        <span style="float:right;position:relative;top:-30px;"></span>
-        <p>' . showPost('', $thread['post_text'], $thread['post_smile']) . '</p>
+<div class="topic--list">
+    <div class="topic-list--header clearfix">
+        <span class="topic-list-header--title"><i class="fa fa-info-circle"></i>' . htmlspecialchars($thread['post_topic']) . '
+                <i class="fa fa-clock-o"></i> ' . date("H:i - F j, Y", $thread['post_date']) . '</span><span class="topic-list-header--toggle-btn"><i class="fa fa-minus"></i></span>
     </div>
-    <br>
-';
+<div class="topic-list--content">
+
+<div class="tcontent clearfix">
+
+' . showPost('', $thread['post_text'], $thread['post_smile']) . '
+
+</div>
+
+    </div>
+</div>';
     }
 } else {
     $main_content .= '<div class="alert alert-info">No newsletters found.</div>';
 }
-
-    $main_content .= '
-
-    <div class="pagination pagination-centered">
-    <ul>
-        <li class="diabled"><span>&larr; Previous</span></li>
-        <li class="active" style="width:100px;"><span style="text-shadow:0 0 5px #999;"><b><a href="/news/1">1</a></b></span></li>
-        <li><a href="/news/2">2</a></li>
-        <li><a href="/news/3">3</a></li>
-        <li><a href="/news/4">4</a></li>
-        <li><a href="/news/5">5</a></li>
-        <li><a href="/news/6">6</a></li>
-        <li><a href="/news/7">7</a></li>
-        <li><a href="/news/8">8</a></li>
-        <li><a href="/news/9">9</a></li>
-        <li class="diabled"><span>Next &rarr;</span></li>
-        </li>
-    </ul>
-</div>
-<br/>
-
-    ';

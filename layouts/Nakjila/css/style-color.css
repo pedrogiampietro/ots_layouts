@@ -1,0 +1,134 @@
+.header--login a:hover,
+.header--login a:focus,
+.header--social ul li a:hover,
+.header--social ul li a:focus,
+.topic--breadcrumb .toggle-sidebar.active,
+.topic-list-content--title h2 a:hover,
+.topic-list-content--icon,
+.topic-list--content ul li:hover>.topic-list-content--rss a,
+.header-nav--tab .nav>li>a:hover,
+.header-nav--tab .nav>li>a:focus,
+.header-member-profile--info ul li a:hover,
+.header-member-profile--info ul li a:focus,
+.topic--breadcrumb .breadcrumb li a:hover,
+.topic--breadcrumb .breadcrumb li a:focus,
+.topiclist-jumpbox-dropup--menu ul li a:hover,
+.topiclist-jumpbox-dropup--menu ul li a:focus,
+.topiclist-jumpbox-dropdown--menu ul li a:hover,
+.topiclist-jumpbox-dropdown--menu ul li a:focus,
+a.adv-search-btn:hover,
+a.adv-search-btn:focus,
+.recent--searches a:hover,
+.recent--searches a:focus,
+.ucp-page a:hover,
+.ucp-page a:focus,
+dl.details dd a:hover,
+.header-member--notifications .dropdown--header .action:hover,
+.header-member--notifications .dropdown--header .action:focus,
+.header-member--notifications .dropdown--body .see-all:hover,
+.header-member--notifications .dropdown--body .see-all:focus,
+.posthilit,
+.action-bar-pagination--new.post-icon:hover,
+.action-bar-pagination--new.post-icon:focus,
+.has-profile .postbody h3 a:hover,
+.has-profile .postbody h3 a:focus,
+.topic-tools .dropdown-menu li:hover,
+.topic-tools .dropdown-menu li a:hover,
+.topic-tools .dropdown-menu li a:focus,
+.quick-mod-tools .dropdown-menu li:hover,
+.quick-mod-tools .dropdown-menu li a:hover,
+.quick-mod-tools .dropdown-menu li a:focus,
+.member-page table a:hover,
+.member-page table a:focus,
+.member-search a:hover,
+.member-search a:focus,
+.login-panel .content p a:hover,
+.login-panel .content p a:focus,
+#faqlinks a,
+p.message a,
+#attach-panel .panel.hidden[style] .file-name a:hover,
+#attach-panel .panel.hidden[style] .file-name a:focus {
+    color: #655b58
+}
+.topic-list-content--meta a:hover,
+.team-page table.table1 tbody td a:hover,
+.team-page table.table1 tbody td a:focus,
+.postprofile a:hover,
+.postprofile a:focus,
+.topic--stats p a:hover,
+.topic--stats p a:focus {
+    color: #655b58!important
+}
+.bg-bluewood,
+.topic-sidebar-widget--signup a.btn:hover,
+.topic-sidebar-widget--signup a.btn:focus,
+.topic-list--header,
+#footer,
+.topic-list--content ul li:hover>.topic-list-content--icon,
+.topic-list-content--icon.has-unread-post:before,
+fieldset.submit-buttons input,
+#LoginForm .modal-header,
+#LoginForm .modal-body .submit-btn:hover,
+#tabs .activetab>a,
+#tabs .activetab>a:hover,
+#tabs .tab>a:hover,
+.mcp-page #navigation li a:hover,
+.mcp-page #navigation li a:focus,
+.mcp-page #navigation #active-subsection a,
+a.button1,
+input.button1,
+input.button3,
+a.button2,
+input.button2,
+#login .fields1 input.button1,
+.ucp-page #navigation li a:hover,
+.ucp-page #navigation li a:focus,
+.ucp-page #navigation #active-subsection a,
+.ucp-page #cp-main .buttons a,
+.pagination>ul>li>span:hover,
+.pagination>ul>li.active>span,
+.pagination>ul>li>a:hover,
+.pagination>ul>li>a:focus,
+.pagination>ul>li.active>a,
+#add_files,
+.login-panel .content p a.button2,
+#preloader,
+.topic-sidebar-widget--oneall .login-title,
+#boardrules-categories .mini-panel h3,
+#boardrules-categories+#container .boardrules-header,
+.quick--reply .quickreply-title,
+.mchat--content>h2:first-child,
+.header--topbar>#phpbb_announcement,
+#mchat-buttons .button {
+    background: url(../images/bg.png)!important;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, .3);
+    background-color: #383134!important;
+    color: #eee!important
+}
+#copyright {
+    background-color: #383134!important
+}
+.topic-list-content--icon,
+.pagination>ul>li>span:hover,
+.pagination>ul>li.active>span,
+.pagination>ul>li>a:hover,
+.pagination>ul>li>a:focus,
+.pagination>ul>li.active>a {
+    border-color: #39383f
+}
+#footerSubscribeForm button[type=submit]:hover {
+    color: #111
+}
+.header--search-bar .input-group-btn .btn:hover,
+.header--search-bar .input-group-btn .btn:focus,
+.topic-sidebar-widget--signup a.btn,
+#footerSubscribeForm button[type=submit],
+.back-to-top button,
+fieldset.submit-buttons input:hover {
+    background-color: #383134
+}
+.header--search-bar .input-group-btn .btn:hover,
+.header--search-bar .input-group-btn .btn:focus {}.topic-list--content>ul>li {
+    color: #7e6c67!important;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, .3)
+}

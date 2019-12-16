@@ -5,9 +5,7 @@ if(!defined('INITIALIZED'))
 $houses = $SQL->query('SELECT COUNT(1) FROM `houses` WHERE `owner` = 0')->fetch();
 ?>
 
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Server Information</h3>
+	<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Server Information</h3>
 		</div>
 		<div class="panel-body">
 			<table class="table table-striped table-condensed" id="faq">

@@ -250,15 +250,15 @@ if ($config['site']['shop_system'])
 
 ?>
 
-<div class="panel panel-default">
-	<div class="panel-heading">
+<div class="topic--list">
+<div class="topic-list--header clearfix">
 		<?php if ($logged) { ?>
 			<div class="pull-right">
 				<span class="label btn-info" style="top:-7px;position:relative;" >You have <?php echo $account_logged->getCustomField('premium_points'); ?> coins</span>
-				<a href="?view=purchasecoins" style="top:-7px;position:relative;" class="btn btn-warning btn-sm"><i class="fa fa-cart-plus fa-lg"></i> Purchase Coins</a>
+				<a href="?view=purchasecoins" style="top:-7px;position:relative;" class="btn btn-warning btn-sm"><font color="white"><i class="fa fa-cart-plus fa-lg"></i> Purchase Coins</font></a>
 			</div>
 		<?php } ?>
-		<h3 class="panel-title">Shop</h3>
+		<span class="topic-list-header--title">Shop</h3>
 	</div>
 	<div class="panel-body">
 		<ul class="nav nav-tabs">

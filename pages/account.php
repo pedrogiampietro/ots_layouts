@@ -4,11 +4,11 @@ if(!defined('INITIALIZED'))
 
 if(!$logged)
 	if($action == "logout")
-		$main_content .= '<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Logout</h3>
+		$main_content .= '<div class="topic--list">
+    <div class="topic-list--header clearfix">
+			<span class="topic-list-header--title"><font color="white">Logout</font></h3>
 		</div>
-		<div class="panel-body">
+		<div class="tcontent clearfix">
 			<p>You have successfully logged out.</p>
 		</div>
 		</div>';
@@ -27,9 +27,7 @@ if(!$logged)
 			}
 		}
 		$main_content .= '
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Login</h3>
+		<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Login</h3>
 			</div>
 			<div class="panel-body">
 				<p>Please enter your account name and your password.</p>
@@ -53,8 +51,8 @@ if(!$logged)
 						</div>
 
 						<div class="text-center">
-							<button type="submit" class="btn btn-secondary">Submit</button>
-							<a class="btn btn-danger" href="?view=lostaccount">Account Lost?</a>
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<a class="btn btn-danger" href="?view=lostaccount"><font color="white">Account Lost?</font></a>
 						</div>
 
 					</fieldset>
@@ -66,17 +64,17 @@ else
 {
 	if($action == "")
 	{
-		$main_content .= '<div class="panel panel-default"><div class="panel-heading">
-		<a class="btn  btn-danger pull-right" style="top:-7px;position:relative;" href="?view=account&action=logout"><i class="fa fa-sign-out"></i> Logout</a>
-		<h3 class="panel-title">Account Management</h3></div>
+		$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix">
+		<a class="btn btn-sm btn-danger pull-right" style="top:-7px;position:relative;" href="?view=account&action=logout"><font color="white"><i class="fa fa-sign-out"></i>Logout</font></a>
+		<span class="topic-list-header--title">Account Management</h3></div>
 		<div class="panel-body">';
 		$account_name = $account_logged->getName();
 		$account_created = $account_logged->getCreateDate();
 		$account_email = $account_logged->getEMail();
 		$rec_key = $account_logged->getCustomField("key");
 		$main_content .= '<div class="panel panel-default">
-			<div class="panel-heading">General Information</div>
-			<table class="table table-striped table-condensed table-bordered">
+			<div class="topic-list--header clearfix">&nbsp;&nbsp;General Information</div>
+			<table class="table table-striped">
 				<tr>
 					<td width="20%">Account Name</td>
 					<td>
@@ -113,32 +111,34 @@ else
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="?view=account&action=changepassword" class="btn btn-secondary "><i class="fa fa-lock"></i> Change Password</a>
-						<a href="?view=account&action=changeemail" class="btn btn-secondary "><i class="fa fa-pencil-square-o"></i> Change Email</a>
-						'.(!$rec_key ? '<a href="?view=account&action=generatekey" class="btn btn-secondary "><i class="fa fa-key"></i> Generate Recovery Key</a>' : '').'
-						<a href="?view=shop" class="btn btn-warning  pull-right"><i class="fa fa-cart-plus fa-lg"></i> Shop</a>
+						<a href="?view=account&action=changepassword" class="btn btn-primary btn-sm"><i class="fa fa-lock"></i> Change Password</a>
+						<a href="?view=account&action=changeemail" class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i> Change Email</a>
+						'.(!$rec_key ? '<a href="?view=account&action=generatekey" class="btn btn-primary btn-sm"><i class="fa fa-key"></i> Generate Recovery Key</a>' : '').'
+						<a href="?view=shop" class="btn btn-warning btn-sm pull-right"><font color="white"><i class="fa fa-cart-plus fa-lg"></i> Shop</font></a>
 					</td>
 				</tr>
 			</table>
 		</div>';
 
-		$main_content .= '<div class="panel panel-default"><div class="panel-heading">
+		$main_content .= '		
+		<br>
+		<div class="topic--list"><div class="topic-list--header clearfix">
 		<div class="btn-group pull-right" style="top:-5px;position:relative;">
-			<a class="btn  btn-success" style="margin-right: 5px;" href="?view=account&action=createcharacter"><i class="fa fa-plus"></i> Create a new character</a>
-			<a class="btn  btn-danger" href="?view=account&action=deletecharacter"><i class="fa fa-trash"></i> Delete a character</a>
+			<a class="btn btn-sm btn-success" style="margin-right: 5px;" href="?view=account&action=createcharacter"><font color="white"><i class="fa fa-plus"></i> Create a new character</font></a>
+			<a class="btn btn-sm btn-danger" href="?view=account&action=deletecharacter"><font color="white"><i class="fa fa-trash"></i> Delete a character</font></a>
 		</div>
-		Characters</div><table class="table table-condensed table-content table-striped"><tbody>';
+		 &nbsp;&nbsp;Characters</div><table class="table table-condensed table-content table-striped"><tbody>';
 		$player_number_counter = 0;
 		$account_players = $account_logged->getPlayersList();
 		foreach ($account_players as $account_player) {
 			$player_number_counter++;
 			$main_content .= '<tr><td>'.$player_number_counter.'. ';
 			if ($account_player->isDeleted()) {
-				$main_content .= '<strike><a data-toggle="tooltip" data-placement="right" data-original-title="Deleted" href="?view=characters&name='.urlencode($account_player->getName()).'">'.htmlspecialchars($account_player->getName()).'</a></strike><div class="pull-right"><a class="btn  btn-warning" style="margin-right: 5px;" href="?view=account&action=undelete&name='.urlencode($account_player->getName()).'"><i class="fa fa-undo"></i> Undelete</a>';
+				$main_content .= '<strike><a data-toggle="tooltip" data-placement="right" data-original-title="Deleted" href="?view=characters&name='.urlencode($account_player->getName()).'">'.htmlspecialchars($account_player->getName()).'</a></strike><div class="pull-right"><a class="btn btn-sm btn-warning" style="margin-right: 5px;" href="?view=account&action=undelete&name='.urlencode($account_player->getName()).'"><i class="fa fa-undo"></i> Undelete</a>';
 			} else {
 				$main_content .= '<a href="?view=characters&name='.urlencode($account_player->getName()).'">'.htmlspecialchars($account_player->getName()).'</a><div class="pull-right">';
 			}
-			$main_content .= '<a class="btn  btn-primary" href="?view=account&action=editcharacter&name='.urlencode($account_player->getName()).'"><i class="fa fa-pencil"></i> Edit</a></div></td></tr>';
+			$main_content .= '<a class="btn btn-sm btn-primary" href="?view=account&action=editcharacter&name='.urlencode($account_player->getName()).'"><i class="fa fa-pencil"></i> Edit</a></div></td></tr>';
 		}
 		$main_content .= '</tbody></table></div>';
 		$main_content .= '</div></div>';
@@ -151,7 +151,7 @@ else
 		$old_password = trim($_POST['oldpassword']);
 		if (empty($new_password) && empty($new_password2) && empty($old_password)) {
 			//$main_content .= 'Please enter your current password and a new password. For your security, please enter the new password twice.<br/><br/><form action="?view=account&action=changepassword" method="post" ><div class="TableContainer" ><table class="Table1" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" ><div class="CaptionInnerContainer" ><span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span><span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span><span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/content/table-headline-border.gif);" ></span><span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/content/box-frame-vertical.gif);" /></span><div class="Text" >Change Password</div><span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/content/box-frame-vertical.gif);" /></span><span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/content/table-headline-border.gif);" ></span><span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span><span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span></div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" ><tr><td class="LabelV" ><span >New Password:</span></td><td style="width:90%;" ><input type="password" name="newpassword" size="30" maxlength="29" ></td></tr><tr><td class="LabelV" ><span >New Password Again:</span></td><td><input type="password" name="newpassword2" size="30" maxlength="29" ></td></tr><tr><td class="LabelV" ><span >Current Password:</span></td><td><input type="password" name="oldpassword" size="30" maxlength="29" ></td></tr></table>        </div>  </table></div></td></tr><br/><table style="width:100%;" ><tr align="center"><td><table border="0" cellspacing="0" cellpadding="0" ><tr><td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Submit" alt="Submit" src="'.$layout_name.'/images/buttons/_sbutton_submit.gif" ></div></div></td><tr></form></table></td><td><table border="0" cellspacing="0" cellpadding="0" ><form action="?view=account" method="post" ><tr><td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/buttons/_sbutton_back.gif" ></div></div></td></tr></form></table></td></tr></table>';
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Change Password</h3></div><div class="panel-body">
+			$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Change Password</h3></div><div class="panel-body">
 				<p>Please enter your current password and a new password. For your security, please enter the new password twice.</p>
 				<form class="form-horizontal" role="form" action="?view=account&action=changepassword" method="post">
 					<fieldset>
@@ -178,7 +178,7 @@ else
 						</div>
 
 						<div class="text-center">
-							<button type="submit" class="btn btn-secondary">Submit</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
 							<a href="?view=account" class="btn btn-default">Back</a>
 						</div>
 
@@ -220,7 +220,7 @@ else
 				}
 
 				//show form
-				$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Change Password</h3></div><div class="panel-body">
+				$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Change Password</h3></div><div class="panel-body">
 				<p>Please enter your current password and a new password. For your security, please enter the new password twice.</p>
 				<form class="form-horizontal" role="form" action="?view=account&action=changepassword" method="post">
 					<fieldset>
@@ -247,7 +247,7 @@ else
 						</div>
 
 						<div class="text-center">
-							<button type="submit" class="btn btn-secondary">Submit</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
 							<a href="?view=account" class="btn btn-default">Back</a>
 						</div>
 
@@ -259,7 +259,7 @@ else
 				$org_pass = $new_password;
 				$account_logged->setPassword($new_password);
 				$account_logged->save();
-				$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Password Changed</h3></div><div class="panel-body"><p>Your password has been changed successfully.</p><p><a href="?view=account" class="btn btn-secondary form-control">Back</a></p></div></div>';
+				$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Password Changed</h3></div><div class="panel-body"><p>Your password has been changed successfully.</p><p><a href="?view=account" class="btn btn-primary form-control">Back</a></p></div></div>';
 				if ($config['site']['send_emails'] && $config['site']['send_mail_when_change_password']) {
 					$mailBody = '<html>
 					<body>
@@ -334,7 +334,7 @@ else
 					$account_logged->set("email_new_time", $account_email_new_time);
 					$account_logged->save();
 
-					$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">E-mail Address Change Requested</h3></div><div class="panel-body"><p>You have requested to change your email address to <b>'.htmlspecialchars($account_email_new).'</b>. The actual change will take place after <b>'.date("j F Y, G:i:s", $account_email_new_time).'</b>, during which you can cancel the request at any time.</p><div class="text-center"><a href="?view=account" class="btn btn-secondary">Back</a></div></div></div>';
+					$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">E-mail Address Change Requested</h3></div><div class="panel-body"><p>You have requested to change your email address to <b>'.htmlspecialchars($account_email_new).'</b>. The actual change will take place after <b>'.date("j F Y, G:i:s", $account_email_new_time).'</b>, during which you can cancel the request at any time.</p><div class="text-center"><a href="?view=account" class="btn btn-primary">Back</a></div></div></div>';
 				}
 				else
 				{
@@ -346,7 +346,7 @@ else
 					//show form
 
 
-					$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Change E-mail Address</h3></div><div class="panel-body"><p>Please enter your password and the new email address. Make sure that you enter a valid email address which you have access to. <b>For security reasons, the actual change will be finalised after a waiting period of '.$config['site']['email_days_to_change'].' days.</b></p>';
+					$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Change E-mail Address</h3></div><div class="panel-body"><p>Please enter your password and the new email address. Make sure that you enter a valid email address which you have access to. <b>For security reasons, the actual change will be finalised after a waiting period of '.$config['site']['email_days_to_change'].' days.</b></p>';
 					$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=changeemail" method="post">
 						<fieldset>
 
@@ -366,7 +366,7 @@ else
 
 							<div class="text-center">
 								<input type="hidden" name="changeemailsave" value="1">
-								<button type="submit" class="btn btn-secondary">Submit</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
 								<a href="?view=account" class="btn btn-default">Back</a>
 							</div>
 
@@ -378,7 +378,7 @@ else
 			}
 			else
 			{
-				$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Change E-mail Address</h3></div><div class="panel-body"><p>Please enter your password and the new email address. Make sure that you enter a valid email address which you have access to. <b>For security reasons, the actual change will be finalised after a waiting period of '.$config['site']['email_days_to_change'].' days.</b></p>';
+				$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Change E-mail Address</h3></div><div class="panel-body"><p>Please enter your password and the new email address. Make sure that you enter a valid email address which you have access to. <b>For security reasons, the actual change will be finalised after a waiting period of '.$config['site']['email_days_to_change'].' days.</b></p>';
 				$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=changeemail" method="post">
 					<fieldset>
 
@@ -398,7 +398,7 @@ else
 
 						<div class="text-center">
 							<input type="hidden" name="changeemailsave" value="1">
-							<button type="submit" class="btn btn-secondary">Submit</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
 							<a href="?view=account" class="btn btn-default">Back</a>
 						</div>
 
@@ -418,11 +418,11 @@ else
 					$account_logged->set("email_new_time", 0);
 					$account_logged->setEmail($account_email_new);
 					$account_logged->save();
-					$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Email Address Changed</h3></div><div class="panel-body"><p>You have accepted <b>'.htmlspecialchars($account_logged->getEmail()).'</b> as your new email address.</p><div class="text-center"><a href="?view=account" class="btn btn-secondary">Back</a></div></div></div>';
+					$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Email Address Changed</h3></div><div class="panel-body"><p>You have accepted <b>'.htmlspecialchars($account_logged->getEmail()).'</b> as your new email address.</p><div class="text-center"><a href="?view=account" class="btn btn-primary">Back</a></div></div></div>';
 				}
 				else
 				{
-					$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Change Email Address</h3></div><div class="panel-body"><p>Do you accept <b>'.htmlspecialchars($account_email_new).'</b> as your new email address?</p>';
+					$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Change Email Address</h3></div><div class="panel-body"><p>Do you accept <b>'.htmlspecialchars($account_email_new).'</b> as your new email address?</p>';
 					$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=changeemail" method="post">
 					<fieldset>
 						<div class="text-center">
@@ -437,7 +437,7 @@ else
 			}
 			else
 			{
-				$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Change of Email Address</h3></div><div class="panel-body"><p>A request has been submitted to change the email address of this account to <b>'.htmlspecialchars($account_email_new).'</b>.</p><p>The actual change will take place on <b>'.date("j F Y, G:i:s", $account_email_new_time).'</b>.</p><p>If you do not want to change your email address, please click on "Cancel".</p>';
+				$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Change of Email Address</h3></div><div class="panel-body"><p>A request has been submitted to change the email address of this account to <b>'.htmlspecialchars($account_email_new).'</b>.</p><p>The actual change will take place on <b>'.date("j F Y, G:i:s", $account_email_new_time).'</b>.</p><p>If you do not want to change your email address, please click on "Cancel".</p>';
 				$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=changeemail" method="post">
 					<fieldset>
 
@@ -456,7 +456,7 @@ else
 			$account_logged->set("email_new", "");
 			$account_logged->set("email_new_time", 0);
 			$account_logged->save();
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Email Address Change Cancelled</h3></div><div class="panel-body"><p>Your request to change the email address of your account has been cancelled. The email address will not be changed.</p><div class="text-center"><a href="?view=account" class="btn btn-secondary">Back</a></div></div></div>';
+			$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Email Address Change Cancelled</h3></div><div class="panel-body"><p>Your request to change the email address of your account has been cancelled. The email address will not be changed.</p><div class="text-center"><a href="?view=account" class="btn btn-primary">Back</a></div></div></div>';
 		}
 	}
 
@@ -483,7 +483,7 @@ else
 					$account_logged->set("key", $new_rec_key);
 					$account_logged->save();
 
-					$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Recovery Key Generated</h3></div><div class="panel-body"><p>Thank you for registering your account! You can now recover your account if you have lost access to the assigned email address by using the following</p><font size="5"><b>Recovery Key: '.htmlspecialchars($new_rec_key).'</b></font></p><br/><b>Important:</b><p>Please write down the recovery key and store it at a safe place!</p><div class="text-center"><a href="?view=account" class="btn btn-secondary">Back</a></div></div></div>';
+					$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Recovery Key Generated</h3></div><div class="panel-body"><p>Thank you for registering your account! You can now recover your account if you have lost access to the assigned email address by using the following</p><font size="5"><b>Recovery Key: '.htmlspecialchars($new_rec_key).'</b></font></p><br/><b>Important:</b><p>Please write down the recovery key and store it at a safe place!</p><div class="text-center"><a href="?view=account" class="btn btn-primary">Back</a></div></div></div>';
 					if($config['site']['send_emails'] && $config['site']['send_mail_when_generate_reckey'])
 					{
 						$mailBody = '<html>
@@ -531,7 +531,7 @@ else
 					$main_content .= '<div class="alert alert-danger">'.$reg_error.'</div>';
 			}
 			//show form
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Generate Recovery Key</h3></div><div class="panel-body"><p>To generate recovery key for your account please enter your password.</p>';
+			$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Generate Recovery Key</h3></div><div class="panel-body"><p>To generate recovery key for your account please enter your password.</p>';
 			$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=generatekey" method="post"><input type="hidden" name="generatekeysave" value="1">
 					<fieldset>
 						<div class="form-group">
@@ -542,7 +542,7 @@ else
 						</div>
 
 						<div class="text-center">
-							<button type="submit" class="btn btn-secondary">Submit</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
 							<a href="?view=account" class="btn btn-default">Back</a>
 						</div>
 
@@ -574,9 +574,9 @@ else
 						$player->set("comment", $new_comment);
 						$player->save();
 
-						$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Character Information Changed</h3></div><div class="panel-body"><p>The character information has been changed.</p><div class="text-center"><a href="?view=account" class="btn btn-secondary">Back</a></div></div></div>';
+						$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Character Information Changed</h3></div><div class="panel-body"><p>The character information has been changed.</p><div class="text-center"><a href="?view=account" class="btn btn-primary">Back</a></div></div></div>';
 					} else {
-						$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Edit Character Information</h3></div><div class="panel-body">Here you can see and edit the information about your character.<p>If you do not want to specify a certain field, just leave it blank.</p>';
+						$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Edit Character Information</h3></div><div class="panel-body">Here you can see and edit the information about your character.<p>If you do not want to specify a certain field, just leave it blank.</p>';
 
 						$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=editcharacter" method="post">
 							<input type="hidden" name="name" value="'.htmlspecialchars($player->getName()).'">
@@ -611,7 +611,7 @@ else
 								</div>
 
 								<div class="text-center">
-									<button type="submit" class="btn btn-secondary">Submit</button>
+									<button type="submit" class="btn btn-primary">Submit</button>
 									<a href="?view=account" class="btn btn-default">Back</a>
 								</div>
 
@@ -665,7 +665,7 @@ else
 									$player->set('deletion', 1);
 									$player->set('deleted', 1);
 									$player->save();
-									$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Character Deleted</h3></div><div class="panel-body"><p>The character '.htmlspecialchars($player_name).' has been deleted.</p><div class="text-center"><a class="btn btn-secondary" href="?view=account">Back</a></div></div></div>';
+									$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Character Deleted</h3></div><div class="panel-body"><p>The character '.htmlspecialchars($player_name).' has been deleted.</p><div class="text-center"><a class="btn btn-primary" href="?view=account">Back</a></div></div></div>';
 								}
 								else
 									$delete_errors[] = 'This character is online.';
@@ -703,7 +703,7 @@ else
 					$main_content .= '<div class="alert alert-danger">'.$delete_error.'</div>';
 				}
 			}
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Delete Character</h3></div><div class="panel-body"><p>To delete a character enter the name of the character and your password.</p>';
+			$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Delete Character</h3></div><div class="panel-body"><p>To delete a character enter the name of the character and your password.</p>';
 			$main_content .= '<form class="form-horizontal" role="form" action="?view=account&action=deletecharacter" method="post"><input type="hidden" name="deletecharactersave" value="1">
 					<fieldset>
 
@@ -721,7 +721,7 @@ else
 							</div>
 						</div>
 						<div class="text-center">
-							<button type="submit" class="btn btn-secondary">Submit</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
 							<a href="?view=account" class="btn btn-default">Back</a>
 						</div>
 
@@ -752,7 +752,7 @@ else
 							$player->set('deleted', 0);
 							$player->set('deletion', 0);
 							$player->save();
-							$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Character Undeleted</h3></div><div class="panel-body"><p>The character <b>'.htmlspecialchars($player_name).'</b> has been undeleted.</p><div class="text-center"><a href="?view=account" class="btn btn-secondary">Back</a></div></div></div>';
+							$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Character Undeleted</h3></div><div class="panel-body"><p>The character <b>'.htmlspecialchars($player_name).'</b> has been undeleted.</p><div class="text-center"><a href="?view=account" class="btn btn-primary">Back</a></div></div></div>';
 							//$main_content .= '<div class="TableContainer" >  <table class="Table1" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" >      <div class="CaptionInnerContainer" >        <span class="CaptionEdgeLeftTop" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightTop" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span>        <span class="CaptionBorderTop" style="background-image:url('.$layout_name.'/images/content/table-headline-border.gif);" ></span>        <span class="CaptionVerticalLeft" style="background-image:url('.$layout_name.'/images/content/box-frame-vertical.gif);" /></span>        <div class="Text" >Character Undeleted</div>        <span class="CaptionVerticalRight" style="background-image:url('.$layout_name.'/images/content/box-frame-vertical.gif);" /></span>        <span class="CaptionBorderBottom" style="background-image:url('.$layout_name.'/images/content/table-headline-border.gif);" ></span>        <span class="CaptionEdgeLeftBottom" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightBottom" style="background-image:url('.$layout_name.'/images/content/box-frame-edge.gif);" /></span>      </div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" ><tr><td>The character <b>'.htmlspecialchars($player_name).'</b> has been undeleted.</td></tr>          </table>        </div>  </table></div></td></tr><br><center><table border="0" cellspacing="0" cellpadding="0" ><form action="?view=account" method="post" ><tr><td style="border:0px;" ><div class="BigButton" style="background-image:url('.$layout_name.'/images/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url('.$layout_name.'/images/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Back" alt="Back" src="'.$layout_name.'/images/buttons/_sbutton_back.gif" ></div></div></td></tr></form></table></center>';
 						}
 						else
@@ -875,7 +875,7 @@ else
 			}
 		} else $_POST['step'] = '';
 
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Create Character</h3></div><div class="panel-body">
+			$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Create Character</h3></div><div class="panel-body">
 				<p>Please choose a name, vocation and sex for your character. <br/>In any case the name must not violate the naming conventions stated in the <a href="?view=rules" target="_blank" >Burmourne Rules</a>, or your character might get deleted or name locked.</p>
 				<form class="form-horizontal" role="form" action="?view=account&action=createcharacter" method="post">
 					<fieldset>
@@ -906,7 +906,7 @@ else
 						</div>
 
 						<div class="text-center">
-							<button type="submit" name="step" value="create" class="btn btn-secondary">Submit</button>
+							<button type="submit" name="step" value="create" class="btn btn-primary">Submit</button>
 							<a href="?view=account" class="btn btn-default">Back</a>
 						</div>
 

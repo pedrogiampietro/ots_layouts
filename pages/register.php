@@ -210,9 +210,9 @@ if (isset($_POST['step']) && $_POST['step'] == 'docreate') {
 		} else die('Failed to create account.');
 
 
-		$main_content = '<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Account Created</h3>
+		$main_content = '<div class="topic--list">
+		<div class="topic-list--header clearfix"
+		><span class="topic-list-header--title">Account Created</h3>
 		</div>
 		<div class="panel-body">';
 		$main_content .= '<p>Your account and character has been created successfully.</p>';
@@ -222,9 +222,7 @@ if (isset($_POST['step']) && $_POST['step'] == 'docreate') {
 
 } else $_POST['step'] = '';
 
-	$main_content .= '<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Create Account</h3>
+	$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Create Account</h3>
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" role="form" action="?view=register" method="post">

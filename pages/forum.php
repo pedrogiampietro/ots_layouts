@@ -8,55 +8,6 @@ $post_interval = 20; // 20 seconds between posts
 $group_not_blocked = $config['site']['access_admin_panel']; // group id of player that can always post, remove post, remove threads
 $posts_per_page = 20;
 $threads_per_page = 20;
-
-//Tiny Editor
-                $main_content .= '
-                    <script type="text/javascript" src="'.$layout_name.'/tiny_mce/tiny_mce.js"></script>
-                    <script type="text/javascript">
-                        tinyMCE.init({
-                            // General options
-                            mode : "textareas",
-                            theme : "advanced",
-                            plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,visualblocks",
-                    
-                            // Theme options
-                            theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
-                            theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,link,unlink,anchor,image,cleanup,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
-                            theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,ltr,rtl",
-                            theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak,restoredraft,visualblocks",
-                            theme_advanced_toolbar_location : "top",
-                            theme_advanced_toolbar_align : "left",
-                            theme_advanced_statusbar_location : "bottom",
-                            theme_advanced_resizing : true,
-                    
-                            // Example content CSS (should be your site CSS)
-                            content_css : "css/content.css",
-                    
-                            // Drop lists for link/image/media/template dialogs
-                            template_external_list_url : "lists/template_list.js",
-                            external_link_list_url : "lists/link_list.js",
-                            external_image_list_url : "lists/image_list.js",
-                            media_external_list_url : "lists/media_list.js",
-                    
-                            // Style formats
-                            style_formats : [
-                                {title : \'Bold text\', inline : \'b\'},
-                                {title : \'Red text\', inline : \'span\', styles : {color : \'#ff0000\'}},
-                                {title : \'Red header\', block : \'h1\', styles : {color : \'#ff0000\'}},
-                                {title : \'Example 1\', inline : \'span\', classes : \'example1\'},
-                                {title : \'Example 2\', inline : \'span\', classes : \'example2\'},
-                                {title : \'Table styles\'},
-                                {title : \'Table row 1\', selector : \'tr\', classes : \'tablerow1\'}
-                            ],
-                    
-                            // Replace values for the template plugin
-                            template_replace_values : {
-                                username : "Some User",
-                                staffid : "991234"
-                            }
-                        });
-                    </script>';
-					
 // SECTION WITH ID 1 IS FOR "NEWS", ONLY ADMINS CAN CREATE NEW THREAD IN IT
 $sections = array(1 => 'News', 2 => 'Wars', 3 => 'Quests', 4 => 'Pictures', 5 => 'Bug Report');
 $sections_desc = array(1 => 'Here you can comment news.', 2 => 'Feel free to tell what you think about your enemy.', 3 => 'Talk with others about quests you made and how to make them.', 4 => 'Show others your best photos from server!', 5 => 'Report bugs on website and in-game here.');
@@ -205,11 +156,9 @@ if(!$logged)
 if($action == '')
 {
 	$main_content .= '
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Boards</h3>
+		<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Boards</h3>
 			</div>
-			<div class="panel-body">
+			<div class="tcontent clearfix">
 				<table class="table table-striped table-condensed">
 					<thead>
 						<tr>
@@ -256,14 +205,13 @@ if($action == 'show_board')
 
 
 	$main_content .= '
-		<div class="panel panel-default">
-			<div class="panel-heading">';
+		<div class="topic--list"><div class="topic-list--header clearfix">';
 				if ($logged) {
-					$main_content .= '<a class="btn btn-sm btn-success pull-right" style="top:4px;position:relative;" href="?view=forum&action=new_topic&section_id='.$section_id.'"><i class="fa fa-plus"></i> New Topic</a>';
+					$main_content .= '<a class="btn btn-sm btn-success pull-right" style="top:-7px;position:relative;" href="?view=forum&action=new_topic&section_id='.$section_id.'"><i class="fa fa-plus"></i> New Topic</a>';
 				}
-				$main_content .= '<h3 class="panel-title"><a href="?view=forum">Boards</a> / <b>'.$sections[$section_id].'</b></h3>
+				$main_content .= '<span class="topic-list-header--title"><a href="?view=forum">Boards</a> / <b>'.$sections[$section_id].'</b></h3>
 			</div>
-			<div class="panel-body">
+			<div class="tcontent clearfix">
 				<table class="table table-striped table-condensed">
 					<thead>
 						<tr>
@@ -324,14 +272,13 @@ if($action == 'show_thread')
 		if(isset($threads[0]['name']))
 			$SQL->query("UPDATE " . $SQL->tableName('z_forum') . " SET " . $SQL->fieldName('views') . "=" . $SQL->fieldName('views') . "+1 WHERE " . $SQL->fieldName('id') . " = ".(int) $thread_id);
 		$main_content .= '
-		<div class="panel panel-default">
-			<div class="panel-heading">';
+		<div class="topic--list"><div class="topic-list--header clearfix">';
 				if ($logged) {
-					$main_content .= '<a class="btn btn-sm btn-success pull-right" style="top:4px;position:relative;" href="?view=forum&action=new_post&thread_id='.$thread_id.'"><i class="fa fa-plus"></i> Post Reply</a>';
+					$main_content .= '<a class="btn btn-sm btn-success pull-right" style="top:-7px;position:relative;" href="?view=forum&action=new_post&thread_id='.$thread_id.'"><i class="fa fa-plus"></i> Post Reply</a>';
 				}
 				$main_content .= '<h3 class="panel-title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$threads[0]['section'].'">'.$sections[$threads[0]['section']].'</a> / <b>'.htmlspecialchars($thread_name['post_topic']).'</b></h3>
 			</div>
-			<div class="panel-body">
+			<div class="tcontent clearfix">
 				<ul class="chat">';
 					$number_of_rows = 0;
 					$bgcolor = (($number_of_rows++ % 2 == 1) ?  $config['site']['darkborder'] : $config['site']['lightborder']);
@@ -372,14 +319,13 @@ if($action == 'show_thread')
 		if(isset($threads[0]['name']))
 			$SQL->query("UPDATE " . $SQL->tableName('z_forum') . " SET " . $SQL->fieldName('views') . "=" . $SQL->fieldName('views') . "+1 WHERE " . $SQL->fieldName('id') . " = ".(int) $thread_id);
 		$main_content .= '
-		<div class="panel panel-default">
-			<div class="panel-heading">';
+		<div class="topic--list"><div class="topic-list--header clearfix">';
 				if ($logged) {
 					$main_content .= '<a class="btn btn-sm btn-success pull-right" style="top:-7px;position:relative;" href="?view=forum&action=new_post&thread_id='.$thread_id.'"><i class="fa fa-plus"></i> Post Reply</a>';
 				}
 				$main_content .= '<h3 class="panel-title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$threads[0]['section'].'">'.$sections[$threads[0]['section']].'</a> / <b>'.htmlspecialchars($thread_name['post_topic']).'</b></h3>
 			</div>
-			<div class="panel-body">';
+			<div class="tcontent clearfix">';
 				foreach($threads as $thread)
 				{
 					$main_content .= '<div class="well"><table class="table table-condensed table-content">';
@@ -526,11 +472,12 @@ if($action == 'new_post')
 					}
 
 					$main_content .= '
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h3 class="panel-title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$thread['section'].'">'.$sections[$thread['section']].'</a> / <a href="?view=forum&action=show_thread&id='.$thread_id.'">'.htmlspecialchars($thread['post_topic']).'</a> / <b>Post new reply</b></h3>
+						<div class="topic--list">
+						<div class="topic-list--header clearfix">
+						<span class="topic-list-header--title">
+						<a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$thread['section'].'">'.$sections[$thread['section']].'</a> / <a href="?view=forum&action=show_thread&id='.$thread_id.'">'.htmlspecialchars($thread['post_topic']).'</a> / <b>Post new reply</b></h3>
 							</div>
-							<div class="panel-body">
+							<div class="tcontent clearfix">
 								<form class="form-horizontal" role="form" action="?" method="post">
 									<input type="hidden" name="action" value="new_post" />
 									<input type="hidden" name="thread_id" value="'.$thread_id.'" />
@@ -592,7 +539,7 @@ if($action == 'new_post')
 						<div class="panel-heading">
 							<h3 class="panel-title">Last 5 posts</h3>
 						</div>
-						<div class="panel-body">
+						<div class="tcontent clearfix">
 							<table class="table table-condensed table-content table-striped">
 								<tbody>';
 								foreach($threads as $thread) {
@@ -692,11 +639,9 @@ if($action == 'edit_post')
 								$main_content .= '<div class="alert alert-danger">'.$error.'</div>';
 						}
 							$main_content .= '
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h3 class="panel-title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$thread['section'].'">'.$sections[$thread['section']].'</a> / <a href="?view=forum&action=show_thread&id='.$thread['first_post'].'">'.htmlspecialchars($first_post['post_topic']).'</a> / <b>Edit post</b></h3>
+								<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$thread['section'].'">'.$sections[$thread['section']].'</a> / <a href="?view=forum&action=show_thread&id='.$thread['first_post'].'">'.htmlspecialchars($first_post['post_topic']).'</a> / <b>Edit post</b></h3>
 									</div>
-									<div class="panel-body">
+									<div class="tcontent clearfix">
 										<form class="form-horizontal" role="form" action="?" method="post">
 											<input type="hidden" name="action" value="edit_post" />
 											<input type="hidden" name="id" value="'.$post_id.'" />
@@ -841,11 +786,9 @@ if($action == 'new_topic')
 					}
 
 					$main_content .= '
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h3 class="panel-title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$section_id.'">'.$sections[$section_id].'</a> / <b>Post new thread</b></h3>
+						<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title"><a href="?view=forum">Boards</a> / <a href="?view=forum&action=show_board&id='.$section_id.'">'.$sections[$section_id].'</a> / <b>Post new thread</b></h3>
 							</div>
-							<div class="panel-body">
+							<div class="tcontent clearfix">
 								<form class="form-horizontal" role="form" action="?" method="post">
 									<input type="hidden" name="action" value="new_topic" />
 									<input type="hidden" name="section_id" value="'.$section_id.'" />

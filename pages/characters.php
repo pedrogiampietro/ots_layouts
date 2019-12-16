@@ -60,7 +60,9 @@ if(!empty($name))
 		$account = $player->getAccount();
 
 		// Character Information - Start
-		$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Character Information</h3></div><div class="panel-body"><table class="table table-striped table-condensed table-content"><tbody>';
+		$main_content .= '<div class="topic--list">
+    <div class="topic-list--header clearfix">
+        <span class="topic-list-header--title">Character Information</h3></div><div class="panel-body"><table class="table table-striped"><tbody>';
 		$main_content .= '<tr><td width="20%">Name</td><td>' . htmlspecialchars($player->getName());
 		if($player->isBanned() || $account->isBanned())
 			$main_content .= '<span style="color:red">[BANNED]</span>';
@@ -128,11 +130,15 @@ if(!empty($name))
 		}
 
 		if ($deads > 0)
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Deaths</h3></div><div class="panel-body"><table class="table table-striped table-condensed table-content"><tbody>' . $dead_add_content . '</tbody></TABLE></div></div>';
+			$main_content .= '<div class="topic--list">
+<div class="topic-list--header clearfix">
+<span class="topic-list-header--title">Deaths</h3></div><div class="panel-body"><table class="table table-striped"><tbody>' . $dead_add_content . '</tbody></TABLE></div></div>';
 
 		// Account Information
 		if (!$player->getHideChar()) {
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Account Information</h3></div><div class="panel-body"><table class="table table-striped table-condensed table-content"><tbody>';
+			$main_content .= '<div class="topic--list">
+<div class="topic-list--header clearfix">
+<span class="topic-list-header--title">Account Information</h3></div><div class="panel-body"><table class="table table-striped"><tbody>';
 			if ($account->getRLName()) {
 				$main_content .= '<tr><td width=20%>Real name</td><td>' . $account->getRLName() . '</td></tr>';
 			}
@@ -161,7 +167,9 @@ if(!empty($name))
 
 
 			// Characters
-			$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Characters</h3></div><div class="panel-body"><table class="table table-condensed table-content table-striped">';
+			$main_content .= '<div class="topic--list">
+<div class="topic-list--header clearfix">
+<span class="topic-list-header--title">Characters</h3></div><div class="panel-body"><table class="table table-condensed table-content table-striped">';
 			$main_content .= '<thead><tr><th>Name</th><th>Level</th><th>Status</th><th></th></tr></thead><tbody>';
 			$account_players = $account->getPlayersList();
 			$player_number = 0;
@@ -213,7 +221,9 @@ if ($showSearch) {
 
 
 
-	/*$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Search Character</h3></div><div class="panel-body"><table class="table table-striped table-condensed"><tbody>';
+	/*$main_content .= '<div class="topic--list">
+<div class="topic-list--header clearfix">
+<span class="topic-list-header--title">Search Character</h3></div><div class="panel-body"><table class="table table-striped table-condensed"><tbody>';
 	$main_content .= '';
 	$main_content .= '<FORM ACTION="?view=characters" METHOD=post><TABLE WIDTH=100% BORDER=0 CELLSPACING=1 CELLPADDING=4><tr><TD BGCOLOR="'.$config['site']['vdarkborder'].'" CLASS=white><B>Search Character</B></td></tr><tr><TD BGCOLOR="'.$config['site']['darkborder'].'"><TABLE BORDER=0 CELLPADDING=1><tr><td>Name</td><td><INPUT NAME="name" VALUE=""SIZE=29 MAXLENGTH=29></td><td><INPUT TYPE=image NAME="Submit" SRC="'.$layout_name.'/images/buttons/sbutton_submit.gif" BORDER=0 WIDTH=120 HEIGHT=18></td></tr></TABLE></td></tr></TABLE></FORM>';
 	$main_content .= '</tbody></table></div></div>';*/

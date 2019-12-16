@@ -32,9 +32,7 @@ if (isset($_POST['zaypay']) && $_POST['zaypay'] == 'proceed') {
 } else $_POST['zaypay'] = '';
 
 $main_content .= '
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Purchase Coins: Payment Options</h3>
+	<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Purchase Coins: Payment Options</h3>
 		</div>
 		<div class="panel-body">
 			<ul class="nav nav-tabs">
@@ -133,9 +131,7 @@ $main_content .= '
 
 require_once('./custom_scripts/paypal/config.php');
 $main_content .= '
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Purchase Coins</h3>
+	<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Purchase Coins</h3>
 		</div>
 		<div class="panel-body">';
 			$main_content .= '

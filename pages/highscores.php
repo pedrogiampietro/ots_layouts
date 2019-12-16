@@ -74,7 +74,7 @@ $tmpSkills = [
 $offset = $page * $rowsPerPage;
 $skills = new Highscores($id, $rowsPerPage, $page, $vocation);
 
-$main_content .= '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">Ranking for '.htmlspecialchars($list_name).'</h3></div><div class="panel-body"><div class="text-center"><div class="btn-group">';
+$main_content .= '<div class="topic--list"><div class="topic-list--header clearfix"><span class="topic-list-header--title">Ranking for '.htmlspecialchars($list_name).'</h3></div><div class="panel-body"><div class="text-center"><div class="btn-group">';
 	foreach ($tmpSkills as $k => $v) {
 		$main_content .= '<a href="?view=highscores&skill='.$k.'" class="btn btn-default '.($list == $k ? 'active' : '') .'">'.$v.'</a>';
 	}

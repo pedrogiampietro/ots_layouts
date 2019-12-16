@@ -85,7 +85,7 @@ $config['site']['shop_system'] = true;
 $config['site']['email_lai_sec_interval'] = 180;
 
 # Layout Config
-$config['site']['layout'] = 'custom';
+$config['site']['layout'] = 'Nakjila';
 $config['site']['vdarkborder'] = '#505050';
 $config['site']['darkborder'] = '#D4C0A1';
 $config['site']['lightborder'] = '#F1E0C6';
