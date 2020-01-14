@@ -21,3 +21,4 @@ Each branch of this repo includes a different layout (more comming soon).
 14. [WOP](https://github.com/pedrogiampietro/ots_layouts/tree/WOP)
 15. [Thora](https://github.com/pedrogiampietro/ots_layouts/tree/Thora)
 16. [PokeStorm](https://github.com/pedrogiampietro/ots_layouts/tree/PokeStorm)
+16. [Telara](https://github.com/pedrogiampietro/ots_layouts/tree/Telara)
